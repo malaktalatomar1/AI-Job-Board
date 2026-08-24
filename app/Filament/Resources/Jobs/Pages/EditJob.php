@@ -16,4 +16,9 @@ class EditJob extends EditRecord
             DeleteAction::make(),
         ];
     }
+
+    protected function getRedirectUrl(): string
+    {
+        return JobResource::getUrl('index');
+    }
 }

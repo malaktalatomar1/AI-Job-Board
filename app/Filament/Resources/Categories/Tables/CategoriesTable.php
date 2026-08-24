@@ -2,11 +2,14 @@
 
 namespace App\Filament\Resources\Categories\Tables;
 
+use App\Models\Category;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
+use Filament\Actions\DeleteAction;
+use App\Filament\Resources\Categories\CategoryResource;
 
 class CategoriesTable
 {
@@ -25,8 +28,16 @@ class CategoriesTable
             ->filters([
                 //
             ])
+
+            ->recordUrl(
+    fn ($record) => CategoryResource::getUrl('view', [
+        'record' => $record,
+    ])
+)
             ->recordActions([
                 EditAction::make(),
+                DeleteAction::make(),
+
             ])
             ->toolbarActions([
                 BulkActionGroup::make([

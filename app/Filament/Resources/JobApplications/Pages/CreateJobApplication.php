@@ -8,4 +8,9 @@ use Filament\Resources\Pages\CreateRecord;
 class CreateJobApplication extends CreateRecord
 {
     protected static string $resource = JobApplicationResource::class;
+
+    protected function getRedirectUrl(): string
+    {
+        return JobApplicationResource::getUrl('index');
+    }
 }

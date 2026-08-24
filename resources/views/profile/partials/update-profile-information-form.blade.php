@@ -26,6 +26,7 @@
             <x-input-label for="name" :value="__('Name')" />
 
             <x-text-input
+            required 
                 id="name"
                 name="name"
                 type="text"
@@ -44,6 +45,7 @@
             <x-input-label for="email" :value="__('Email')" />
 
             <x-text-input
+            required 
                 id="email"
                 name="email"
                 type="email"
@@ -82,6 +84,7 @@
             <x-input-label for="age" :value="__('Age')" />
 
             <x-text-input
+            required
                 id="age"
                 name="age"
                 type="number"
@@ -99,6 +102,7 @@
             <x-input-label for="job_title" :value="__('Job Title')" />
 
             <x-text-input
+            required
                 id="job_title"
                 name="job_title"
                 type="text"
@@ -115,6 +119,7 @@
             <x-input-label for="phone" :value="__('Phone')" />
 
             <x-text-input
+            required
                 id="phone"
                 name="phone"
                 type="text"
@@ -130,6 +135,8 @@
             <x-input-label for="skills" :value="__('Skills')" />
 
             <textarea
+            
+                required
                 id="skills"
                 name="skills"
                 rows="3"

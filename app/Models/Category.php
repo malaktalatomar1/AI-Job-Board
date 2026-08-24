@@ -15,4 +15,9 @@ class Category extends Model
     {
         return $this->hasMany(Job::class);
     }
+
+    protected function getRedirectUrl(): string
+{
+    return $this->getResource()::getUrl('index');
+}
 }

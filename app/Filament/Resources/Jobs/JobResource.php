@@ -45,6 +45,7 @@ class JobResource extends Resource
             'index' => ListJobs::route('/'),
             'create' => CreateJob::route('/create'),
             'edit' => EditJob::route('/{record}/edit'),
+            'view' => Pages\ViewJobs::route('/{record}'),
         ];
     }
 }

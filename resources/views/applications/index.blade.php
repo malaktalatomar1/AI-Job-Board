@@ -30,8 +30,7 @@
                 <div>
                     <div class="flex items-center gap-3 mb-3">
 
-                        <div
-                            class="w-11 h-11 rounded-xl bg-indigo-600 text-white flex items-center justify-center shadow-lg">
+                        <div class="w-11 h-11 rounded-xl bg-indigo-600 text-white flex items-center justify-center shadow-lg">
                             📄
                         </div>
 
@@ -64,7 +63,6 @@
                 </a>
 
             </div>
-
 
             {{-- Applications --}}
             @if ($applications->count())
@@ -118,6 +116,7 @@
                                                     <span class="font-semibold text-slate-700">
                                                         Category:
                                                     </span>
+
                                                     {{ $application->job->category->name }}
                                                 </p>
 
@@ -125,6 +124,7 @@
                                                     <span class="font-semibold text-slate-700">
                                                         Location:
                                                     </span>
+
                                                     📍 {{ $application->job->location }}
                                                 </p>
 
@@ -132,6 +132,7 @@
 
                                             <p class="text-slate-400 text-sm mt-3">
                                                 Applied on
+
                                                 <span class="font-medium text-slate-600">
                                                     {{ $application->created_at->format('M d, Y') }}
                                                 </span>
@@ -140,7 +141,6 @@
                                         </div>
 
                                     </div>
-
 
                                     {{-- Status --}}
                                     <div class="flex flex-col items-start md:items-end gap-3">
@@ -207,7 +207,6 @@
 
                                         @endif
 
-
                                         {{-- Cancel Button --}}
                                         @if ($application->status === 'Pending')
 
@@ -215,6 +214,7 @@
                                                 action="{{ route('applications.cancel', $application->id) }}"
                                                 method="POST"
                                             >
+
                                                 @csrf
                                                 @method('PATCH')
 
@@ -309,7 +309,6 @@
         </div>
 
     </div>
-
 
     {{-- AI Chatbot --}}
     @livewire('chatbot')

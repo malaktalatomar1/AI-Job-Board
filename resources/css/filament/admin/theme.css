@@ -1,0 +1,40 @@
+@import '../../../../vendor/filament/filament/resources/css/theme.css';
+
+@source '../../../../app/Filament/**/*';
+@source '../../../../resources/views/filament/**/*';
+
+html,
+body {
+    background-color: #F8FAFC !important;
+}
+.stat-total-jobs,
+.stat-open-jobs,
+.stat-applications {
+    background: #ffffff !important;
+    border: 1px solid #E2E8F0 !important;
+    border-radius: 18px !important;
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.06) !important;
+    transition: all 0.2s ease;
+}
+
+.stat-total-jobs,
+.stat-open-jobs,
+.stat-applications {
+    background: #ffffff !important;
+    border: 2px solid #6366F1 !important;
+    border-radius: 18px !important;
+    transition: border-color 0.5s ease, box-shadow 0.5s ease;
+    animation: borderBlink 1.5s ease-in-out infinite !important;
+}
+
+@keyframes borderBlink {
+    0%, 100% {
+        border-color: transparent !important;
+        box-shadow: none;
+    }
+
+    50% {
+        border-color: #6366F1 !important;
+        box-shadow: 0 0 12px rgba(99, 102, 241, 0.3);
+    }
+}

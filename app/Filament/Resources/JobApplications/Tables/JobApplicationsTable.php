@@ -1,12 +1,13 @@
 <?php
 
 namespace App\Filament\Resources\JobApplications\Tables;
-
+use App\Filament\Resources\JobApplications\JobApplicationResource;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
+use Filament\Actions\DeleteAction;
 
 class JobApplicationsTable
 {
@@ -52,9 +53,15 @@ class JobApplicationsTable
                 //
             ])
 
-            ->recordActions([
-                EditAction::make(),
-            ])
+            ->recordUrl(
+    fn ($record) => JobApplicationResource::getUrl('view', [
+        'record' => $record,
+    ])
+)
+->recordActions([
+    EditAction::make(),
+    DeleteAction::make(),
+])
 
             ->toolbarActions([
                 BulkActionGroup::make([

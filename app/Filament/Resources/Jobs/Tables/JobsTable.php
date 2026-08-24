@@ -7,6 +7,8 @@ use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
+use Filament\Actions\DeleteAction;
+use App\Filament\Resources\Jobs\JobResource;
 
 class JobsTable
 {
@@ -37,8 +39,16 @@ class JobsTable
             ->filters([
                 //
             ])
+
+            
+->recordUrl(
+    fn ($record) => JobResource::getUrl('view', [
+        'record' => $record,
+    ])
+)
             ->recordActions([
                 EditAction::make(),
+                DeleteAction::make(),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([

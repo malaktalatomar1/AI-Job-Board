@@ -23,23 +23,20 @@
                     <!-- Jobs -->
                     <x-nav-link
                         :href="route('jobs.index')"
-                        :active="request()->routeIs('jobs.index')"
-                    >
+                        :active="request()->routeIs('jobs.index')">
                         Jobs
                     </x-nav-link>
 
                     <!-- My Applications -->
                     <x-nav-link
                         :href="route('applications.index')"
-                        :active="request()->routeIs('applications.index')"
-                    >
+                        :active="request()->routeIs('applications.index')">
                         My Applications
                     </x-nav-link>
 
                 </div>
 
             </div>
-
 
             <!-- Right Side -->
             <div class="hidden sm:flex sm:items-center sm:ms-6">
@@ -85,17 +82,13 @@
 
                     </x-slot>
 
-
                     <!-- Dropdown Content -->
                     <x-slot name="content">
 
                         <!-- Profile -->
                         <x-dropdown-link :href="route('profile.edit')">
-
                             {{ __('Profile') }}
-
                         </x-dropdown-link>
-
 
                         <!-- Logout -->
                         <form method="POST" action="{{ route('logout') }}">
@@ -118,7 +111,6 @@
                 </x-dropdown>
 
             </div>
-
 
             <!-- Hamburger -->
             <div class="-me-2 flex items-center sm:hidden">
@@ -179,7 +171,6 @@
 
     </div>
 
-
     <!-- Responsive Navigation Menu -->
     <div
         :class="{
@@ -200,7 +191,6 @@
 
             </x-responsive-nav-link>
 
-
             <!-- My Applications -->
             <x-responsive-nav-link
                 :href="route('applications.index')"
@@ -211,7 +201,6 @@
             </x-responsive-nav-link>
 
         </div>
-
 
         <!-- Mobile User Information -->
         <div class="pt-4 pb-1 border-t border-gray-200 dark:border-gray-600">
@@ -233,7 +222,6 @@
 
             </div>
 
-
             <!-- Mobile Settings -->
             <div class="mt-3 space-y-1">
 
@@ -244,7 +232,6 @@
                     {{ __('Profile') }}
 
                 </x-responsive-nav-link>
-
 
                 <!-- Logout -->
                 <form method="POST" action="{{ route('logout') }}">

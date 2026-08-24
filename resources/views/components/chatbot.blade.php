@@ -5,7 +5,6 @@
         $isFilament = request()->is('admin') || request()->is('admin/*');
     @endphp
 
-
     {{-- Floating Chat Container --}}
     <div
         class="
@@ -27,7 +26,10 @@
             <div
                 class="
                     mb-4
-                    {{ $isFilament ? 'w-[430px] h-[600px]' : 'w-[380px] h-[520px]' }}
+                    {{ $isFilament
+                        ? 'w-[430px] h-[600px]'
+                        : 'w-[380px] h-[520px]'
+                    }}
                     max-w-[90vw]
                     bg-white
                     rounded-2xl
@@ -72,6 +74,7 @@
                         </div>
 
                         <div>
+
                             <div class="text-base">
                                 AI Assistant
                             </div>
@@ -79,10 +82,10 @@
                             <div class="text-xs font-normal text-white/80">
                                 AI Job Board
                             </div>
+
                         </div>
 
                     </div>
-
 
                     <button
                         type="button"
@@ -156,10 +159,13 @@
                                     "
                                 >
                                     Hello 👋
+
                                     <br>
+
                                     <span class="text-sm text-gray-500">
                                         How can I help you today?
                                     </span>
+
                                 </div>
 
                             </div>
@@ -170,9 +176,9 @@
 
                         @foreach($messages as $message)
 
-                            {{-- User Message --}}
                             @if($message['role'] === 'user')
 
+                                {{-- User Message --}}
                                 <div class="flex justify-end">
 
                                     <div
@@ -285,7 +291,6 @@
                             transition
                         "
                     >
-
 
                     <button
                         type="button"

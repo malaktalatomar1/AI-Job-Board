@@ -11,7 +11,9 @@
 </head>
 
 <body class="bg-gray-100">
+
 <x-navbar />
+
     <div class="max-w-7xl mx-auto px-6 py-10">
 
         <h1 class="text-3xl font-bold mb-8">
@@ -69,7 +71,9 @@
         @endif
 
     </div>
+
 @livewire('chatbot')
+
 </body>
 
 </html>
